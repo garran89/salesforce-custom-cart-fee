@@ -60,13 +60,4 @@ public without sharing class CustomCartFee {
         CartExtension.CartItem feeItem = createFeeCartItem(deliveryGroup);
         allItems.add(feeItem);
     }
-
-    public void setTotalAmountForFeeOrderItem(List<OrderItem> orderItems) {
-        Product2 feeProduct = getCartFeeProduct();
-        for (OrderItem orderItem : orderItems) {
-            if (orderItem.Product2Id == feeProduct.Id) {
-                orderItem.TotalLineAmount = CART_FEE_PRICE;
-            }
-        }
-    }
 }
